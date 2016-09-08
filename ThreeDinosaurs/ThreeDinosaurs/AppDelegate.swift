@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Running")
         
+        UserDefaults.standard.register(defaults: ["hostname" : "192.168.1.106"])
+        
         return true
     }
 

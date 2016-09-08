@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3BF83E434887F51E38246BBB /* Pods_ThreeDinosaurs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD4AEFFCFD0E9A8F7D515D6 /* Pods_ThreeDinosaurs.framework */; };
+		B1454B361D81D72800932C58 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1454B351D81D72800932C58 /* ConfigurationViewController.swift */; };
 		B160FA0A1D81A91200AFD1EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160FA091D81A91200AFD1EB /* AppDelegate.swift */; };
 		B160FA0C1D81A91200AFD1EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160FA0B1D81A91200AFD1EB /* ViewController.swift */; };
 		B160FA0F1D81A91200AFD1EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B160FA0D1D81A91200AFD1EB /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		590435F70D15E3243451E03F /* Pods-ThreeDinosaurs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDinosaurs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThreeDinosaurs/Pods-ThreeDinosaurs.debug.xcconfig"; sourceTree = "<group>"; };
 		5CD4AEFFCFD0E9A8F7D515D6 /* Pods_ThreeDinosaurs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeDinosaurs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1454B351D81D72800932C58 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		B160FA061D81A91200AFD1EB /* ThreeDinosaurs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDinosaurs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B160FA091D81A91200AFD1EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B160FA0B1D81A91200AFD1EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B160FA151D81A91200AFD1EB /* Info.plist */,
 				B160FA1B1D81A9CC00AFD1EB /* DysonClient.swift */,
 				B9FA99B71D81BE73003DA475 /* ThumbControllerView.swift */,
+				B1454B351D81D72800932C58 /* ConfigurationViewController.swift */,
 			);
 			path = ThreeDinosaurs;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				B160FA1C1D81A9CC00AFD1EB /* DysonClient.swift in Sources */,
 				B160FA0C1D81A91200AFD1EB /* ViewController.swift in Sources */,
 				B160FA0A1D81A91200AFD1EB /* AppDelegate.swift in Sources */,
+				B1454B361D81D72800932C58 /* ConfigurationViewController.swift in Sources */,
 				B9FA99B81D81BE73003DA475 /* ThumbControllerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
