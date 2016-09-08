@@ -10,10 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var leftThumbView: ThumbControllerView!
+    @IBOutlet weak var rightThumbView: ThumbControllerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        leftThumbView.eventHandler = {
+            self.dysonClient.leftWheelSpeed = self.leftThumbView.beltControlSpeed
+        }
+        rightThumbView.eventHandler = {
+            self.dysonClient.rightWheelSpeed = self.rightThumbView.beltControlSpeed
+        }
     }
 
     override func didReceiveMemoryWarning() {
