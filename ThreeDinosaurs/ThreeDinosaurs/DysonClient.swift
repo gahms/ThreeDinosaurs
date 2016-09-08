@@ -65,10 +65,13 @@ class DysonClient: NSObject, MQTTSessionDelegate {
         print("new wheel speeds: Left:\(leftWheelSpeed), Right:\(rightWheelSpeed)")
         let body = "{\"Left\":\(leftWheelSpeed),\"Right\":\(rightWheelSpeed)}"
         let data = body.data(using: String.Encoding.utf8)
+        session.publishData(data, onTopic: "command/wheel_speed")
+        /*
         session.publishAndWait(data,
                                onTopic: "command/wheel_speed",
                                retain: false,
                                qos: MQTTQosLevel.atLeastOnce)
+         */
     }
     
     

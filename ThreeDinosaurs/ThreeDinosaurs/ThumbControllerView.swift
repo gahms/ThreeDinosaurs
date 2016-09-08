@@ -37,6 +37,7 @@ class ThumbControllerView: UIView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         beltControlSpeed = 0
+        eventHandler();
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
