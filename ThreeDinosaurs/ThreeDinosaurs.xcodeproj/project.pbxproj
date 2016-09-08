@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3BF83E434887F51E38246BBB /* Pods_ThreeDinosaurs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD4AEFFCFD0E9A8F7D515D6 /* Pods_ThreeDinosaurs.framework */; };
 		B1454B361D81D72800932C58 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1454B351D81D72800932C58 /* ConfigurationViewController.swift */; };
+		B1454B381D81DCE900932C58 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1454B371D81DCE900932C58 /* ImageFetcher.swift */; };
+		B1454B3C1D81DED900932C58 /* VideoFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = B1454B3B1D81DED900932C58 /* VideoFeed.m */; };
 		B160FA0A1D81A91200AFD1EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160FA091D81A91200AFD1EB /* AppDelegate.swift */; };
 		B160FA0C1D81A91200AFD1EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160FA0B1D81A91200AFD1EB /* ViewController.swift */; };
 		B160FA0F1D81A91200AFD1EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B160FA0D1D81A91200AFD1EB /* Main.storyboard */; };
@@ -22,6 +24,10 @@
 		590435F70D15E3243451E03F /* Pods-ThreeDinosaurs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDinosaurs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThreeDinosaurs/Pods-ThreeDinosaurs.debug.xcconfig"; sourceTree = "<group>"; };
 		5CD4AEFFCFD0E9A8F7D515D6 /* Pods_ThreeDinosaurs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeDinosaurs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1454B351D81D72800932C58 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		B1454B371D81DCE900932C58 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		B1454B391D81DECB00932C58 /* VideoFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoFeed.h; sourceTree = "<group>"; };
+		B1454B3A1D81DED800932C58 /* ThreeDinosaurs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThreeDinosaurs-Bridging-Header.h"; sourceTree = "<group>"; };
+		B1454B3B1D81DED900932C58 /* VideoFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoFeed.m; sourceTree = "<group>"; };
 		B160FA061D81A91200AFD1EB /* ThreeDinosaurs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDinosaurs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B160FA091D81A91200AFD1EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B160FA0B1D81A91200AFD1EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +99,10 @@
 				B160FA1B1D81A9CC00AFD1EB /* DysonClient.swift */,
 				B9FA99B71D81BE73003DA475 /* ThumbControllerView.swift */,
 				B1454B351D81D72800932C58 /* ConfigurationViewController.swift */,
+				B1454B371D81DCE900932C58 /* ImageFetcher.swift */,
+				B1454B391D81DECB00932C58 /* VideoFeed.h */,
+				B1454B3B1D81DED900932C58 /* VideoFeed.m */,
+				B1454B3A1D81DED800932C58 /* ThreeDinosaurs-Bridging-Header.h */,
 			);
 			path = ThreeDinosaurs;
 			sourceTree = "<group>";
@@ -133,6 +143,7 @@
 					B160FA051D81A91200AFD1EB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3HSQQ63KY2;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -224,6 +235,8 @@
 				B160FA1C1D81A9CC00AFD1EB /* DysonClient.swift in Sources */,
 				B160FA0C1D81A91200AFD1EB /* ViewController.swift in Sources */,
 				B160FA0A1D81A91200AFD1EB /* AppDelegate.swift in Sources */,
+				B1454B3C1D81DED900932C58 /* VideoFeed.m in Sources */,
+				B1454B381D81DCE900932C58 /* ImageFetcher.swift in Sources */,
 				B1454B361D81D72800932C58 /* ConfigurationViewController.swift in Sources */,
 				B9FA99B81D81BE73003DA475 /* ThumbControllerView.swift in Sources */,
 			);
@@ -351,11 +364,14 @@
 			baseConfigurationReference = 590435F70D15E3243451E03F /* Pods-ThreeDinosaurs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3HSQQ63KY2;
 				INFOPLIST_FILE = ThreeDinosaurs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miracle.ThreeDinosaurs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThreeDinosaurs/ThreeDinosaurs-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -365,11 +381,13 @@
 			baseConfigurationReference = E18B44A16B887BF0A7E1C73C /* Pods-ThreeDinosaurs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3HSQQ63KY2;
 				INFOPLIST_FILE = ThreeDinosaurs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miracle.ThreeDinosaurs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThreeDinosaurs/ThreeDinosaurs-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
