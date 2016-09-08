@@ -20,10 +20,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        let dysonClient = DysonClient()
+    let dysonClient = DysonClient(host: "192.168.1.106")
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        dysonClient.poc()
+        dysonClient.connect()
+    }
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        dysonClient.leftWheelSpeed = 1000
+        
     }
 
 }

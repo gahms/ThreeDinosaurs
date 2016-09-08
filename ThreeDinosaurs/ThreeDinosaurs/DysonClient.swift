@@ -10,7 +10,55 @@ import Foundation
 import MQTTClient
 
 class DysonClient: NSObject, MQTTSessionDelegate {
+    var leftWheelSpeed : Int = 0 {
+        didSet {
+            publishWheelSpeed()
+        }
+    }
+    
+    var rightWheelSpeed : Int = 0 {
+        didSet {
+            publishWheelSpeed()
+        }
+    }
+    
+    private let transport = MQTTCFSocketTransport()
+    private let session = MQTTSession()!
+    
+    init(host: String) {
+        super.init()
 
+        transport.host = host // "192.168.1.106"
+        transport.port = 1883
+        
+        session.transport = transport
+        session.protocolLevel = .version31
+        session.delegate = self
+    }
+    
+    func connect() {
+        print("Connecting...")
+        session.connectAndWaitTimeout(30)
+        print("Connecting...done")
+    }
+    
+    func disconnect() {
+        print("disconnect...")
+        session.disconnect()
+        print("disconnect...done")
+    }
+    
+    func publishWheelSpeed() {
+        print("new wheel speeds: Left:\(leftWheelSpeed), Right:\(rightWheelSpeed)")
+        let body = "{\"Left\":\(leftWheelSpeed),\"Right\":\(rightWheelSpeed)}"
+        let data = body.data(using: String.Encoding.utf8)
+        session.publishAndWait(data,
+                               onTopic: "command/wheel_speed",
+                               retain: false,
+                               qos: MQTTQosLevel.atLeastOnce)
+    }
+    
+    
     func poc() {
         let transport = MQTTCFSocketTransport()
         transport.host = "192.168.1.106"
@@ -86,11 +134,11 @@ class DysonClient: NSObject, MQTTSessionDelegate {
     }
     
     func connectionError(_ session: MQTTSession!, error: Error!) {
-        print("connectionError")
+        print("connectionError: error: \(error)")
     }
     
     func connectionRefused(_ session: MQTTSession!, error: Error!) {
-        print("connectionRefused")
+        print("connectionRefused: error: \(error)")
     }
     
     func newMessage(_ session: MQTTSession!, data: Data!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
@@ -98,6 +146,7 @@ class DysonClient: NSObject, MQTTSessionDelegate {
     }
     
     func handleEvent(_ session: MQTTSession!, event eventCode: MQTTSessionEvent, error: Error!) {
-        print("handleEvent")
+        
+        print("handleEvent: \(eventCode), error: \(error)")
     }
 }
