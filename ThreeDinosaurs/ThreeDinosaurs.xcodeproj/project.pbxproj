@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B160FA0A1D81A91200AFD1EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160FA091D81A91200AFD1EB /* AppDelegate.swift */; };
+		B160FA0C1D81A91200AFD1EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160FA0B1D81A91200AFD1EB /* ViewController.swift */; };
+		B160FA0F1D81A91200AFD1EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B160FA0D1D81A91200AFD1EB /* Main.storyboard */; };
+		B160FA111D81A91200AFD1EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B160FA101D81A91200AFD1EB /* Assets.xcassets */; };
+		B160FA141D81A91200AFD1EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B160FA121D81A91200AFD1EB /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B160FA061D81A91200AFD1EB /* ThreeDinosaurs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDinosaurs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B160FA091D81A91200AFD1EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B160FA0B1D81A91200AFD1EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B160FA0E1D81A91200AFD1EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B160FA101D81A91200AFD1EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B160FA131D81A91200AFD1EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B160FA151D81A91200AFD1EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B160FA031D81A91200AFD1EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B160F9FD1D81A91200AFD1EB = {
+			isa = PBXGroup;
+			children = (
+				B160FA081D81A91200AFD1EB /* ThreeDinosaurs */,
+				B160FA071D81A91200AFD1EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B160FA071D81A91200AFD1EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B160FA061D81A91200AFD1EB /* ThreeDinosaurs.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B160FA081D81A91200AFD1EB /* ThreeDinosaurs */ = {
+			isa = PBXGroup;
+			children = (
+				B160FA091D81A91200AFD1EB /* AppDelegate.swift */,
+				B160FA0B1D81A91200AFD1EB /* ViewController.swift */,
+				B160FA0D1D81A91200AFD1EB /* Main.storyboard */,
+				B160FA101D81A91200AFD1EB /* Assets.xcassets */,
+				B160FA121D81A91200AFD1EB /* LaunchScreen.storyboard */,
+				B160FA151D81A91200AFD1EB /* Info.plist */,
+			);
+			path = ThreeDinosaurs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B160FA051D81A91200AFD1EB /* ThreeDinosaurs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B160FA181D81A91200AFD1EB /* Build configuration list for PBXNativeTarget "ThreeDinosaurs" */;
+			buildPhases = (
+				B160FA021D81A91200AFD1EB /* Sources */,
+				B160FA031D81A91200AFD1EB /* Frameworks */,
+				B160FA041D81A91200AFD1EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThreeDinosaurs;
+			productName = ThreeDinosaurs;
+			productReference = B160FA061D81A91200AFD1EB /* ThreeDinosaurs.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B160F9FE1D81A91200AFD1EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = ThreeDinosaurs;
+				TargetAttributes = {
+					B160FA051D81A91200AFD1EB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3HSQQ63KY2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B160FA011D81A91200AFD1EB /* Build configuration list for PBXProject "ThreeDinosaurs" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B160F9FD1D81A91200AFD1EB;
+			productRefGroup = B160FA071D81A91200AFD1EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B160FA051D81A91200AFD1EB /* ThreeDinosaurs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B160FA041D81A91200AFD1EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B160FA141D81A91200AFD1EB /* LaunchScreen.storyboard in Resources */,
+				B160FA111D81A91200AFD1EB /* Assets.xcassets in Resources */,
+				B160FA0F1D81A91200AFD1EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B160FA021D81A91200AFD1EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B160FA0C1D81A91200AFD1EB /* ViewController.swift in Sources */,
+				B160FA0A1D81A91200AFD1EB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B160FA0D1D81A91200AFD1EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B160FA0E1D81A91200AFD1EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B160FA121D81A91200AFD1EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B160FA131D81A91200AFD1EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B160FA161D81A91200AFD1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B160FA171D81A91200AFD1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B160FA191D81A91200AFD1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3HSQQ63KY2;
+				INFOPLIST_FILE = ThreeDinosaurs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.miracle.ThreeDinosaurs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B160FA1A1D81A91200AFD1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3HSQQ63KY2;
+				INFOPLIST_FILE = ThreeDinosaurs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.miracle.ThreeDinosaurs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B160FA011D81A91200AFD1EB /* Build configuration list for PBXProject "ThreeDinosaurs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B160FA161D81A91200AFD1EB /* Debug */,
+				B160FA171D81A91200AFD1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B160FA181D81A91200AFD1EB /* Build configuration list for PBXNativeTarget "ThreeDinosaurs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B160FA191D81A91200AFD1EB /* Debug */,
+				B160FA1A1D81A91200AFD1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B160F9FE1D81A91200AFD1EB /* Project object */;
+}
