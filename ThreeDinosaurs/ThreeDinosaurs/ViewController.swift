@@ -26,6 +26,9 @@ class ViewController: UIViewController {
         
         let hostname = UserDefaults.standard.object(forKey: "hostname") as! String
         dysonClient = DysonClient(host: hostname)
+        dysonClient.statusListener = {
+            self.statusLabel.text = $0
+        }
         videoFeed = VideoFeed()
         videoFeed?.setupVideoFeed(hostname, imageUpdatedEvent:{
             self.imageUpdated()
@@ -87,6 +90,9 @@ class ViewController: UIViewController {
         UserDefaults.standard.set(hostname,
                                   forKey: "hostname")
         dysonClient = DysonClient(host: hostname)
+        dysonClient.statusListener = {
+            self.statusLabel.text = $0
+        }
         videoFeed?.setupVideoFeed(hostname, imageUpdatedEvent:{
             self.imageUpdated()
         })

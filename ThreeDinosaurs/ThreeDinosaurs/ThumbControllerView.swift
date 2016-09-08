@@ -30,7 +30,34 @@ class ThumbControllerView: UIView {
         
         let relPos = -(yLoc - self.bounds.midY)
         let converted = (convertFactor/self.bounds.midY) * relPos
-        beltControlSpeed = Int(converted.rounded())
+        
+        beltControlSpeed = 0
+        if converted > 3000 {
+            beltControlSpeed = 4000
+        }
+        else if converted > 2000 {
+            beltControlSpeed = 3000
+        }
+        else if converted > 1000 {
+            beltControlSpeed = 2000
+        }
+        else if converted > 500 {
+            beltControlSpeed = 1000
+        }
+        else if converted < -3000 {
+            beltControlSpeed = -4000
+        }
+        else if converted < -2000 {
+            beltControlSpeed = -3000
+        }
+        else if converted < -1000 {
+            beltControlSpeed = -2000
+        }
+        else if converted < -500 {
+            beltControlSpeed = -1000
+        }
+ 
+        //beltControlSpeed = Int(converted.rounded())
         
         eventHandler();
     }
