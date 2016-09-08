@@ -33,6 +33,9 @@ class DysonClient: NSObject, MQTTSessionDelegate {
     typealias EventHandler = (Void) -> Void
     var eventListener : EventHandler?
     
+    typealias StatusListener = (_ status: String) -> Void
+    var statusListener : StatusListener = { _ in }
+    
     private let transport = MQTTCFSocketTransport()
     private let session = MQTTSession()!
     
@@ -109,18 +112,22 @@ class DysonClient: NSObject, MQTTSessionDelegate {
     
     func connected(_ session: MQTTSession!) {
         print("connected")
+        statusListener("Connected")
     }
     
     func connectionClosed(_ session: MQTTSession!) {
         print("connectionClosed")
+        statusListener("Connection Closed")
     }
     
     func connectionError(_ session: MQTTSession!, error: Error!) {
         print("connectionError: error: \(error)")
+        statusListener(error.localizedDescription)
     }
     
     func connectionRefused(_ session: MQTTSession!, error: Error!) {
         print("connectionRefused: error: \(error)")
+        statusListener(error.localizedDescription)
     }
     
     func newMessage(_ session: MQTTSession!, data: Data!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
