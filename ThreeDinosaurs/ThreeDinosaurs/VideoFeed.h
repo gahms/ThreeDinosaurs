@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef void (^ImageUpdatedEvent)();
 
 @interface VideoFeed : NSObject
 
@@ -20,6 +21,7 @@
 @property (strong, nonatomic)NSURLSessionDownloadTask *downloadPhotoTask;
 @property (strong, nonatomic)UIImage *videoImage;
 
--(void)setupVideoFeed: (NSString*)IPAddress;
+-(void)setupVideoFeed:(NSString*)IPAddress
+    imageUpdatedEvent:(ImageUpdatedEvent)imageUpdatedEvent;
     
 @end

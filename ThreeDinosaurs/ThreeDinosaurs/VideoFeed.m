@@ -11,8 +11,9 @@
 
 @implementation VideoFeed
 
--(void)setupVideoFeed: (NSString*)IPAddress{
-    
+-(void)setupVideoFeed:(NSString*)IPAddress
+    imageUpdatedEvent:(ImageUpdatedEvent)imageUpdatedEvent
+{
     _videoIPAddress = IPAddress;
     _videoURLString = [NSString stringWithFormat:@"http://%@:8080/frame.jpg", _videoIPAddress];
     NSLog(@"Build URL:%@",_videoURLString);
@@ -30,18 +31,20 @@
         
     }
     
-    [self getImage];
+    [self getImageImageUpdatedEvent:imageUpdatedEvent];
 }
 
--(void)restartVideoFeed{
+-(void)restartVideoFeed:(ImageUpdatedEvent)imageUpdatedEvent
+{
     [_downloadPhotoTask cancel];
-    [self getImage];
+    [self getImageImageUpdatedEvent:imageUpdatedEvent];
 }
 
--(void)getImage{
-    
+-(void)getImageImageUpdatedEvent:(ImageUpdatedEvent)imageUpdatedEvent
+{
     // schedule fallback in case we loose connectivity
-    [self performSelector:@selector(restartVideoFeed) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(restartVideoFeed:)
+               withObject:imageUpdatedEvent afterDelay:1.0];
     
     //NSLog(@"Get Image");
     _downloadPhotoTask = [_videoSession
@@ -61,20 +64,20 @@
                                           _videoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
                                           
                                           // Post Notification
-                                          [[NSNotificationCenter defaultCenter] postNotificationName:@"video_updated"
-                                                                                              object:self
-                                                                                            userInfo:nil];
-                                          
+                                          if (imageUpdatedEvent != nil) {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   imageUpdatedEvent();
+                                               });
+                                          }
                                       }
                                       
                                   }
                               }
                               
                               // cancel the above call (and any others on self)
-                              [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(restartVideoFeed) object:nil];
+                              [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(restartVideoFeed:) object:imageUpdatedEvent];
                               
-                              [self getImage];
-                              
+                              [self getImageImageUpdatedEvent:imageUpdatedEvent];
                           }];
     
     // 4
