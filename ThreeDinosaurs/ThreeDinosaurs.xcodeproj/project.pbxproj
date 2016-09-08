@@ -14,6 +14,7 @@
 		B160FA111D81A91200AFD1EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B160FA101D81A91200AFD1EB /* Assets.xcassets */; };
 		B160FA141D81A91200AFD1EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B160FA121D81A91200AFD1EB /* LaunchScreen.storyboard */; };
 		B160FA1C1D81A9CC00AFD1EB /* DysonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160FA1B1D81A9CC00AFD1EB /* DysonClient.swift */; };
+		B9FA99B81D81BE73003DA475 /* ThumbControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA99B71D81BE73003DA475 /* ThumbControllerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B160FA131D81A91200AFD1EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B160FA151D81A91200AFD1EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B160FA1B1D81A9CC00AFD1EB /* DysonClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DysonClient.swift; sourceTree = "<group>"; };
+		B9FA99B71D81BE73003DA475 /* ThumbControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbControllerView.swift; sourceTree = "<group>"; };
 		E18B44A16B887BF0A7E1C73C /* Pods-ThreeDinosaurs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeDinosaurs.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThreeDinosaurs/Pods-ThreeDinosaurs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				B160FA121D81A91200AFD1EB /* LaunchScreen.storyboard */,
 				B160FA151D81A91200AFD1EB /* Info.plist */,
 				B160FA1B1D81A9CC00AFD1EB /* DysonClient.swift */,
+				B9FA99B71D81BE73003DA475 /* ThumbControllerView.swift */,
 			);
 			path = ThreeDinosaurs;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				B160FA1C1D81A9CC00AFD1EB /* DysonClient.swift in Sources */,
 				B160FA0C1D81A91200AFD1EB /* ViewController.swift in Sources */,
 				B160FA0A1D81A91200AFD1EB /* AppDelegate.swift in Sources */,
+				B9FA99B81D81BE73003DA475 /* ThumbControllerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
