@@ -20,6 +20,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        let dysonClient = DysonClient()
+        
+        dysonClient.poc()
+    }
 
 }
 
