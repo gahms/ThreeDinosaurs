@@ -12,15 +12,26 @@ import MQTTClient
 class DysonClient: NSObject, MQTTSessionDelegate {
     var leftWheelSpeed : Int = 0 {
         didSet {
-            publishWheelSpeed()
+            if leftWheelSpeed != oldValue {
+                publishWheelSpeed()
+            }
         }
     }
     
     var rightWheelSpeed : Int = 0 {
         didSet {
-            publishWheelSpeed()
+            if rightWheelSpeed != oldValue {
+                publishWheelSpeed()
+            }
         }
     }
+    
+    var distances : [String : AnyObject] = [:]
+    var wheelTravel : [String : AnyObject] = [:]
+    var bumps : [String : AnyObject] = [:]
+    
+    typealias EventHandler = (Void) -> Void
+    var eventListener : EventHandler?
     
     private let transport = MQTTCFSocketTransport()
     private let session = MQTTSession()!
@@ -40,6 +51,8 @@ class DysonClient: NSObject, MQTTSessionDelegate {
         print("Connecting...")
         session.connectAndWaitTimeout(30)
         print("Connecting...done")
+        
+        session.subscribeAndWait(toTopic: "#", at: .atMostOnce)
     }
     
     func disconnect() {
@@ -88,6 +101,53 @@ class DysonClient: NSObject, MQTTSessionDelegate {
         print("disconnect...done")
     }
 
+    
+    func connected(_ session: MQTTSession!) {
+        print("connected")
+    }
+    
+    func connectionClosed(_ session: MQTTSession!) {
+        print("connectionClosed")
+    }
+    
+    func connectionError(_ session: MQTTSession!, error: Error!) {
+        print("connectionError: error: \(error)")
+    }
+    
+    func connectionRefused(_ session: MQTTSession!, error: Error!) {
+        print("connectionRefused: error: \(error)")
+    }
+    
+    func newMessage(_ session: MQTTSession!, data: Data!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
+        
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            //print("newMessage, topic: \(topic), json: \(json)")
+            
+            if let jsonDict = json as? Dictionary<String, AnyObject> {
+                if topic == "status/psd" {
+                    distances = jsonDict
+                }
+                else if topic == "status/odometry" {
+                    wheelTravel = jsonDict
+                }
+                else if topic == "status/bumps" {
+                    bumps = jsonDict
+                    print("BUMP! \(bumps)")
+                }
+            }
+            if let eventHandler = eventListener {
+                eventHandler()
+            }
+        } catch {
+            print("error decoding JSON: \(error)")
+        }
+    }
+    
+    func handleEvent(_ session: MQTTSession!, event eventCode: MQTTSessionEvent, error: Error!) {
+        print("handleEvent: \(eventCode), error: \(error)")
+    }
+    
     /*
     func poc2() {
         session = MQTTSession()
@@ -125,28 +185,4 @@ class DysonClient: NSObject, MQTTSessionDelegate {
     }
     */
 
-    func connected(_ session: MQTTSession!) {
-        print("connected")
-    }
-    
-    func connectionClosed(_ session: MQTTSession!) {
-        print("connectionClosed")
-    }
-    
-    func connectionError(_ session: MQTTSession!, error: Error!) {
-        print("connectionError: error: \(error)")
-    }
-    
-    func connectionRefused(_ session: MQTTSession!, error: Error!) {
-        print("connectionRefused: error: \(error)")
-    }
-    
-    func newMessage(_ session: MQTTSession!, data: Data!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
-        print("newMessage")
-    }
-    
-    func handleEvent(_ session: MQTTSession!, event eventCode: MQTTSessionEvent, error: Error!) {
-        
-        print("handleEvent: \(eventCode), error: \(error)")
-    }
 }

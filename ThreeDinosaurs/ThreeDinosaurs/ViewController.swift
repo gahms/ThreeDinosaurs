@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var label: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        dysonClient.eventListener = {
+            self.label.text = self.dysonClient.distances.description
+        }
         dysonClient.connect()
     }
     
@@ -32,6 +36,5 @@ class ViewController: UIViewController {
         dysonClient.leftWheelSpeed = 1000
         
     }
-
 }
 
