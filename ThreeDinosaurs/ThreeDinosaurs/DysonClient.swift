@@ -47,12 +47,14 @@ class DysonClient: NSObject, MQTTSessionDelegate {
         session.delegate = self
     }
     
-    func connect() {
+    func connect() -> Bool {
         print("Connecting...")
-        session.connectAndWaitTimeout(30)
+        let success = session.connectAndWaitTimeout(30)
         print("Connecting...done")
         
         //session.subscribeAndWait(toTopic: "#", at: .atMostOnce)
+        
+        return success
     }
     
     func disconnect() {

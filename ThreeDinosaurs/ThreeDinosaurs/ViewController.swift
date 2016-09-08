@@ -48,8 +48,6 @@ class ViewController: UIViewController {
         self.imageView.image = self.videoFeed?.videoImage
     }
     
-    var videoObserver : NSObjectProtocol!
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -59,8 +57,13 @@ class ViewController: UIViewController {
         }
         */
         statusLabel.text = "Connecting..."
-        dysonClient.connect()
-        statusLabel.text = "Connected"
+        let success = dysonClient.connect()
+        if success {
+            statusLabel.text = "Connected"
+        }
+        else {
+            statusLabel.text = "Connect failed"
+        }
     }
     
     func videoUpdated() {
@@ -75,11 +78,6 @@ class ViewController: UIViewController {
         statusLabel.text = "Disconnecting..."
         dysonClient.disconnect()
         statusLabel.text = "Disconnected"
-    }
-    
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        dysonClient.leftWheelSpeed = 1000
-        
     }
     
     @IBAction func unwindFromConfiguration(segue:UIStoryboardSegue) {
