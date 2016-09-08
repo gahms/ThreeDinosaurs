@@ -43,12 +43,12 @@
     // schedule fallback in case we loose connectivity
     [self performSelector:@selector(restartVideoFeed) withObject:nil afterDelay:1.0];
     
-    NSLog(@"Get Image");
+    //NSLog(@"Get Image");
     _downloadPhotoTask = [_videoSession
                           downloadTaskWithURL:_videoURL completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
                               // 3
                               
-                              NSLog(@"Error:%@",error.description);
+                              //NSLog(@"Error:%@",error.description);
                               if(error == nil){
                                   
                                   if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
