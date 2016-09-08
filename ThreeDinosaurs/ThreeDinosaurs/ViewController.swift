@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var label: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +21,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        let dysonClient = DysonClient()
+    let dysonClient = DysonClient(host: "192.168.1.106")
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        dysonClient.poc()
+        dysonClient.eventListener = {
+            self.label.text = self.dysonClient.distances.description
+        }
+        dysonClient.connect()
     }
     
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        dysonClient.leftWheelSpeed = 1000
+        
+    }
+<<<<<<< HEAD
+    
+=======
+>>>>>>> e33816378bb7eda8b4a86fd11c739822fcb654f8
 }
 
